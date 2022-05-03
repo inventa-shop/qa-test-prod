@@ -1,0 +1,20 @@
+{
+  "name": "qa-test-prod",
+  "version": "1.0.0",
+  "description": "qa tests in prod",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open",
+    "alert": "cypress run --spec 'cypress/integration/ProdTests/ProdProductsTest.spec.js'"
+  },
+  "keywords": [
+    "qa",
+    "test",
+    "cypress"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.6.0"
+  }
+}

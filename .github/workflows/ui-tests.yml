@@ -1,0 +1,24 @@
+name: ui-test
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+
+jobs:
+  ui-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - run: npm i
+    - run: npm run alert
+    - name: Report Status
+      if: always()
+      uses: ravsamhq/notify-slack-action@v1
+      with:
+        status: ${{ job.status }}
+        notify_when: 'failure'
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
