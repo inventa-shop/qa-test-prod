@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cypress open",
-    "alert": "cypress run --spec 'cypress/integration/ProdTests/ProdProductsTest.spec.js'"
+    "alert": "cypress run --config pageLoadTimeout=60000,retries=1,defaultCommandTimeout=4000,viewportWidth=1440,viewportHeight=900 --spec 'cypress/integration/ProdTests/ProdProductsTest.spec.js'",
+    "smoke-test": "cypress run --config pageLoadTimeout=60000,retries=1,defaultCommandTimeout=4000,viewportWidth=1440,viewportHeight=900 --spec 'cypress/integration/ProdTests/ProductTests.spec.js' && cypress run --spec 'cypress/integration/ProdTests/ShopkeeperRegistration.spec.js'"
   },
   "keywords": [
     "qa",
