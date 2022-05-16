@@ -7,7 +7,7 @@ describe('Register', () => {
     beforeEach(() => {
         registerPage.goHomePage()
         registerPage.clickAcceptCookie()
-        registerPage.goRegisterFormRetailer()
+        registerPage.clickToRegisterFormRetailer()
     })
 
     context('when I leave field information blank', () => {
@@ -23,7 +23,7 @@ describe('Register', () => {
 
         it('Name and phone without filling', () => {
             
-            registerPage.buttonNext()
+            registerPage.clickButtonNext()
             registerPage.alert.haveText('Adicione o nome da pessoa de contato')
             registerPage.alert.haveText('Forneça um número de telefone com DDD válido')           
         })
@@ -31,8 +31,8 @@ describe('Register', () => {
         it('CPF, CNPJ, Email and password without filling', () => {
 
             registerPage.registerFormRetailer(user)
-            registerPage.buttonNext()
-            registerPage.buttonSubmit()
+            registerPage.clickButtonNext()
+            registerPage.clickButtonSubmit()
 
             registerPage.alert.haveText('Adicione o seu CPF')
             registerPage.alert.haveText('CPF é inválido, favor validar os números informados')
@@ -61,14 +61,14 @@ describe('Register', () => {
                 }
                 
                 registerPage.registerFormRetailer(user)
-                registerPage.buttonNext()
+                registerPage.clickButtonNext()
                 
                 
                 passwords.forEach((password) => {
                     user.password = password
                     registerPage.registerFormRetailerDetails(user)
-                    registerPage.termsAndConditions()
-                    registerPage.buttonSubmit()
+                    registerPage.clickTermsAndConditions()
+                    registerPage.clickButtonSubmit()
                 })
             })
         

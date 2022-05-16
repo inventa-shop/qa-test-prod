@@ -12,35 +12,35 @@ class RegisterPage {
     }
 
     clickAcceptCookie() {
-        cy.get(el.button_accept_cookie).click()
+        cy.get(el.ACCEPT_COOKIE_BUTTON_BY_CLASS).click()
     }
 
-    goRegisterFormRetailer() {
-        cy.contains(el.goFormButton).click()
+    clickToRegisterFormRetailer() {
+        cy.contains(el.GO_FORM_BUTTON_BY_ATTRIBUTE).click()
     }
 
     registerFormRetailer(user) {
-        cy.get(el.name).type(user.name)
-        cy.get(el.phone).type(user.phone)
+        cy.get(el.NAME_BY_ID).type(user.name)
+        cy.get(el.PHONE_BY_ID).type(user.phone)
     }
 
     registerFormRetailerDetails(user) {
-        cy.get(el.cpf).type(user.cpf)
-        cy.get(el.cnpj).type(user.cnpj)
-        cy.get(el.email).type(user.email)
-        cy.get(el.password).type(user.password)
+        cy.get(el.CPF_BY_ID).type(user.cpf)
+        cy.get(el.CNPJ_BY_ID).type(user.cnpj)
+        cy.get(el.EMAIL_BY_ID).type(user.email)
+        cy.get(el.PASSWORD_BY_ID).type(user.password)
     }
 
-    buttonNext() {
-        cy.contains(el.nextButton).click()
+    clickButtonNext() {
+        cy.contains(el.NEXT_BUTTON_BY_ATTRIBUTE).click()
     }
 
-    termsAndConditions() {
-        cy.get(el.termsAndConditions).click()
+    clickTermsAndConditions() {
+        cy.get(el.TERMS_AND_CONDITIONS_BY_ID).click()
     }
 
-    buttonSubmit() {
-        cy.get(el.submitButton).click()
+    clickButtonSubmit() {
+        cy.get(el.REGISTER_BUTTON_BY_ATTRIBUTE).click()
     }
 }
 
