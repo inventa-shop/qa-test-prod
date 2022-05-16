@@ -1,5 +1,5 @@
-import alert from '../../components/alert'
-import { el } from './elements'
+import alert from '../../Components/AlertComponent/AlertComponent'
+import { el } from './RegisterPageSelectors'
 
 class RegisterPage {
 

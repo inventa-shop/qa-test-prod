@@ -1,4 +1,4 @@
-import { el } from './elements'
+import { el } from './AlertComponentSelectors'
 
 class Alert {
     haveText(expectedText) {
