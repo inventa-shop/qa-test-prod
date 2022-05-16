@@ -1,4 +1,7 @@
-{
+{   
+    "baseUrl": "https://inventa.shop",
+    "viewportWidth": 1440,
+    "viewportHeight": 900,
     "defaultCommandTimeout": 6000,
     "slowCommandTimeout": 6000,
     "chromeWebSecurity": false,
