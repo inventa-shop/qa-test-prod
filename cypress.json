@@ -1,3 +1,4 @@
 {
+    "baseUrl": "https://inventa.shop/",
     "scrollBehavior":"center"
 }
