@@ -2,6 +2,12 @@
 
 describe('Testing search feature', () => {
 
+  Cypress.on(
+    'uncaught:exception',
+    (_,__) =>
+      false,
+  );
+
   before(() => {
     cy.visit('/collections/promocoes-1');
   });
@@ -12,16 +18,24 @@ describe('Testing search feature', () => {
     cy.get('.search-bar-button').click();
     cy.get('.search-bar__input-wrapper').first().type('Shampoo transparente{enter}');
     cy.contains('Ver preço')
-    cy.contains('Shampoo claro e transparente').should('have.length', 0);
+    cy.contains('a','Shampoo claro e transparente').should('have.length', 0);
   })
 
-  it.only('Will search for Batom líquido transparente and expect to get just one label', () => {
+  it("Will search for Perfume transparente and expect to don't get a product", () => {
 
+    cy.get('.search-bar-button').click();
+    cy.get('.search-bar__input-wrapper').type('Perfume transparente{enter}');
     cy.get('.modal-closer').first().click();
+    cy.contains('a','Perfume transparente').should('have.length', 0);
+  })
+
+  it("Will search for Batom líquido transparente and expect to don't get a product ", () => {
+
+
     cy.get('.search-bar-button').click();
     cy.get('.search-bar__input-wrapper').type('Batom líquido transparente{enter}');
+    cy.get('.modal-closer').first().click();
     cy.contains('Ver preço')
-    cy.get('.cookie-bar__button').click();
-    cy.contains('a', 'Batom líquido transparente').should('have.length', 0);
+    cy.contains('a','Batom líquido transparente').should('have.length', 0);
   })
 });
