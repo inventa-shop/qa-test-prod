@@ -12,7 +12,7 @@ describe('Testing search feature', () => {
     cy.visit('/collections/promocoes-1');
   });
 
-  it('Will search for shampoo transparente and expect to get just one label', () => {
+  it("Will search for shampoo transparente and expect to don't get a product", () => {
     cy.get('.modal-closer').first().click();
     cy.get('.search-bar__input-wrapper').first().type('Shampoo transparente{enter}');
     cy.contains('Ver preço')

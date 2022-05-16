@@ -1,7 +1,7 @@
-name: ui-test
+name: smoke-ui-test
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/60 * * * *"
 
 jobs:
   ui-test:
@@ -13,7 +13,7 @@ jobs:
       with:
         node-version: '14'
     - run: npm i
-    - run: npm run alert
+    - run: npm run smoke-test
     - name: Report Status
       if: always()
       uses: ravsamhq/notify-slack-action@v1

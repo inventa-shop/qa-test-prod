@@ -1,4 +1,4 @@
-import RegisterPage from '../../support/pages/register'
+import RegisterPage from '../../support/Pages/RegisterPage/RegisterPage'
 
 describe('Register', () => {
 
