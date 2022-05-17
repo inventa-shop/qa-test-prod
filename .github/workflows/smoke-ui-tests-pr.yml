@@ -1,6 +1,9 @@
 name: smoke-ui-test-pr
 
-on: [push, pull_request]
+push:
+  pull_request:
+    branches:
+      - master
 
 jobs:
   smoke-ui-test-pr:
