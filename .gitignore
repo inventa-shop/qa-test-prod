@@ -5,7 +5,8 @@ package-lock.json
 .DS_Store
 **/videos
 /videos
-/screenshots
+**/screenshots
+cypress/screenshots
 /TestReport
 TestReport
 cypress-combined-report.json
