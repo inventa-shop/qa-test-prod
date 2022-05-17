@@ -1,7 +1,8 @@
 name: comment-artifacts-in-pr-if-smoke-tests-failed
+
 on:
   workflow_run:
-    workflows: ["smoke-ui-test-pr"]
+    workflows: ["smoke-ui-tests-pr"]
     types: [completed]
 
 jobs:

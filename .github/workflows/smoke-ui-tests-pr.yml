@@ -1,4 +1,4 @@
-name: smoke-ui-test-pr
+name: smoke-ui-tests-pr
 on:
   push:
     pull_request:
@@ -6,7 +6,7 @@ on:
         - master
 
 jobs:
-  smoke-ui-test-pr:
+  smoke-ui-tests-pr:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
