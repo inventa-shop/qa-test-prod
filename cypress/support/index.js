@@ -22,10 +22,10 @@ import addContext from 'mochawesome/addContext';
 
 Cypress.on('test:after:run', (test, runnable) => {
     if(test.state === 'failed') {
-        const screenshot = `${Cypress.config('screenshotsFolder')}/${
+        const screenshot = `screenshots/${
             Cypress.spec.name
         }/${runnable.parent.title} -- ${test.title} (failed).png`;
-        const video =  `${Cypress.config('videosFolder')}/${Cypress.spec.name}.mp4`
+        const video =  `videos/${Cypress.spec.name}.mp4`
         addContext({test}, screenshot);
         addContext({ test }, video);
     }
