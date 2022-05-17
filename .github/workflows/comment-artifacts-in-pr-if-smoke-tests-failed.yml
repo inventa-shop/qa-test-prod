@@ -1,12 +1,13 @@
-name: comment-artifacts-in-pr
+name: comment-artifacts-in-pr-if-smoke-tests-failed
 on:
   workflow_run:
     workflows: [smoke-ui-test-pr]
     types: [completed]
 
 jobs:
-  download:
+  comment-artifacts-in-pr-if-smoke-tests-failed:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
       - name: 'Download artifact'
         uses: actions/github-script@v5
