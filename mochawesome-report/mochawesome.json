@@ -1,0 +1,146 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-05-17T19:53:11.199Z",
+    "end": "2022-05-17T19:55:59.386Z",
+    "duration": 168187,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e3d17de2-a219-4c84-9c04-3bf86740622c",
+      "title": "",
+      "fullFile": "cypress/integration/ProdTests/ProdProductsTest.spec.js",
+      "file": "cypress/integration/ProdTests/ProdProductsTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c3fee93f-95b1-4bec-b089-e72b02d1f106",
+          "title": "Testing search feature",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Will search for shampoo transparente and expect to don't get a product",
+              "fullTitle": "Testing search feature Will search for shampoo transparente and expect to don't get a product",
+              "timedOut": null,
+              "duration": 94551,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.modal-closer').first().click();\ncy.get('.search-bar__input-wrapper').first().type('Shampoo transparente{enter}');\ncy.contains('Ver preço');\ncy.contains('a', 'Shampoo claro e transparente').should('have.length', 0);",
+              "err": {},
+              "uuid": "2726d666-7465-41dd-a546-182f800ca8fe",
+              "parentUUID": "c3fee93f-95b1-4bec-b089-e72b02d1f106",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Will search for Perfume transparente and expect to don't get a product",
+              "fullTitle": "Testing search feature Will search for Perfume transparente and expect to don't get a product",
+              "timedOut": null,
+              "duration": 35057,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.search-bar__input-wrapper').type('Perfume transparente{enter}');\ncy.get('.modal-closer').first().click();\ncy.contains('a', 'Perfume transparente').should('have.length', 0);",
+              "err": {},
+              "uuid": "ed6c810c-cdd7-4d8d-9eb7-d07092d83064",
+              "parentUUID": "c3fee93f-95b1-4bec-b089-e72b02d1f106",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Will search for Batom líquido transparente and expect to don't get a product ",
+              "fullTitle": "Testing search feature Will search for Batom líquido transparente and expect to don't get a product ",
+              "timedOut": null,
+              "duration": 38050,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.search-bar__input-wrapper').type('Batom líquido transparente{enter}');\ncy.get('.modal-closer').first().click();\ncy.contains('Ver preço');\ncy.contains('a', 'Batom líquido transparente').should('have.length', 0);",
+              "err": {},
+              "uuid": "7bdd7ff6-0d80-4dd8-8885-0e8489adaca0",
+              "parentUUID": "c3fee93f-95b1-4bec-b089-e72b02d1f106",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2726d666-7465-41dd-a546-182f800ca8fe",
+            "ed6c810c-cdd7-4d8d-9eb7-d07092d83064",
+            "7bdd7ff6-0d80-4dd8-8885-0e8489adaca0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 167658,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": true,
+        "reportPageTitle": "My Test Suite",
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

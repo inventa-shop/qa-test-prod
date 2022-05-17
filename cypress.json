@@ -8,5 +8,16 @@
     "updateState": 6000,
     "updateTimeout": 6000,
     "waitForPageToLoadSafeTimeout": 6000,
-    "scrollBehavior":"center"
+    "scrollBehavior":"center",
+    "reporter": "../node_modules/mochawesome/src/mochawesome.js",
+    "reporterOptions": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": true,
+        "reportPageTitle": "My Test Suite",
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+    },
+    "screenshotsFolder": "screenshots"
 }

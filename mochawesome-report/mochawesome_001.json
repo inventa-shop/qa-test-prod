@@ -1,0 +1,112 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-05-17T19:56:05.540Z",
+    "end": "2022-05-17T19:56:12.368Z",
+    "duration": 6828,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e1ccdcfb-4bf4-48bf-84ca-3e92d80a7414",
+      "title": "",
+      "fullFile": "cypress/integration/ProdTests/ProductTests.spec.js",
+      "file": "cypress/integration/ProdTests/ProductTests.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "eff31d92-3c9e-49fa-8e1c-bcb0f67a85f7",
+          "title": "Search for test products",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test products should not be available in production",
+              "fullTitle": "Search for test products Test products should not be available in production",
+              "timedOut": null,
+              "duration": 6453,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  \"/Users/caiquecoelho/Documents/Projetos/qa-test-prod/screenshots/ProdTests/ProductTests.spec.js/Search for test products -- Test products should not be available in production (failed).png\",\n  \"/Users/caiquecoelho/Documents/Projetos/qa-test-prod/cypress/videos/ProdTests/ProductTests.spec.js.mp4\"\n]",
+              "code": "page = new _HomePage.HomePage(); //page.visit();\npage.getSearchBarInput().type('Shampoo transparente{enter}');\npage = new _SearchPage.SearchPage();\npage.getSeePriceLabel().should('be.visible');\npage.verifyIfProductDoesNotExists('Shampoo claro e transparente');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 6000ms: Expected to find element: `.search-bar__input-wrapper`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 6000ms: Expected to find element: `.search-bar__input-wrapper`, but never found it.\n    at HomePage.eval [as getSearchBarInput] (https://inventa.shop/__cypress/tests?p=cypress/integration/ProdTests/ProductTests.spec.js:189:71)\n    at Context.eval (https://inventa.shop/__cypress/tests?p=cypress/integration/ProdTests/ProductTests.spec.js:154:10)",
+                "diff": null
+              },
+              "uuid": "6a1e2bd7-0e19-480d-be5c-e02d56fd8a1f",
+              "parentUUID": "eff31d92-3c9e-49fa-8e1c-bcb0f67a85f7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "6a1e2bd7-0e19-480d-be5c-e02d56fd8a1f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6453,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": true,
+        "reportPageTitle": "My Test Suite",
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

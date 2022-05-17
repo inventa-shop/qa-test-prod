@@ -1,0 +1,343 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 7,
+    "passes": 6,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-05-17T19:53:11.199Z",
+    "end": "2022-05-17T19:57:24.893Z",
+    "duration": 239989,
+    "testsRegistered": 7,
+    "passPercent": 85.71428571428571,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e3d17de2-a219-4c84-9c04-3bf86740622c",
+      "title": "",
+      "fullFile": "cypress/integration/ProdTests/ProdProductsTest.spec.js",
+      "file": "cypress/integration/ProdTests/ProdProductsTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c3fee93f-95b1-4bec-b089-e72b02d1f106",
+          "title": "Testing search feature",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Will search for shampoo transparente and expect to don't get a product",
+              "fullTitle": "Testing search feature Will search for shampoo transparente and expect to don't get a product",
+              "timedOut": null,
+              "duration": 94551,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.modal-closer').first().click();\ncy.get('.search-bar__input-wrapper').first().type('Shampoo transparente{enter}');\ncy.contains('Ver preço');\ncy.contains('a', 'Shampoo claro e transparente').should('have.length', 0);",
+              "err": {},
+              "uuid": "2726d666-7465-41dd-a546-182f800ca8fe",
+              "parentUUID": "c3fee93f-95b1-4bec-b089-e72b02d1f106",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Will search for Perfume transparente and expect to don't get a product",
+              "fullTitle": "Testing search feature Will search for Perfume transparente and expect to don't get a product",
+              "timedOut": null,
+              "duration": 35057,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.search-bar__input-wrapper').type('Perfume transparente{enter}');\ncy.get('.modal-closer').first().click();\ncy.contains('a', 'Perfume transparente').should('have.length', 0);",
+              "err": {},
+              "uuid": "ed6c810c-cdd7-4d8d-9eb7-d07092d83064",
+              "parentUUID": "c3fee93f-95b1-4bec-b089-e72b02d1f106",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Will search for Batom líquido transparente and expect to don't get a product ",
+              "fullTitle": "Testing search feature Will search for Batom líquido transparente and expect to don't get a product ",
+              "timedOut": null,
+              "duration": 38050,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.search-bar__input-wrapper').type('Batom líquido transparente{enter}');\ncy.get('.modal-closer').first().click();\ncy.contains('Ver preço');\ncy.contains('a', 'Batom líquido transparente').should('have.length', 0);",
+              "err": {},
+              "uuid": "7bdd7ff6-0d80-4dd8-8885-0e8489adaca0",
+              "parentUUID": "c3fee93f-95b1-4bec-b089-e72b02d1f106",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2726d666-7465-41dd-a546-182f800ca8fe",
+            "ed6c810c-cdd7-4d8d-9eb7-d07092d83064",
+            "7bdd7ff6-0d80-4dd8-8885-0e8489adaca0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 167658,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "e1ccdcfb-4bf4-48bf-84ca-3e92d80a7414",
+      "title": "",
+      "fullFile": "cypress/integration/ProdTests/ProductTests.spec.js",
+      "file": "cypress/integration/ProdTests/ProductTests.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "eff31d92-3c9e-49fa-8e1c-bcb0f67a85f7",
+          "title": "Search for test products",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test products should not be available in production",
+              "fullTitle": "Search for test products Test products should not be available in production",
+              "timedOut": null,
+              "duration": 6453,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  \"/Users/caiquecoelho/Documents/Projetos/qa-test-prod/screenshots/ProdTests/ProductTests.spec.js/Search for test products -- Test products should not be available in production (failed).png\",\n  \"/Users/caiquecoelho/Documents/Projetos/qa-test-prod/cypress/videos/ProdTests/ProductTests.spec.js.mp4\"\n]",
+              "code": "page = new _HomePage.HomePage(); //page.visit();\npage.getSearchBarInput().type('Shampoo transparente{enter}');\npage = new _SearchPage.SearchPage();\npage.getSeePriceLabel().should('be.visible');\npage.verifyIfProductDoesNotExists('Shampoo claro e transparente');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 6000ms: Expected to find element: `.search-bar__input-wrapper`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 6000ms: Expected to find element: `.search-bar__input-wrapper`, but never found it.\n    at HomePage.eval [as getSearchBarInput] (https://inventa.shop/__cypress/tests?p=cypress/integration/ProdTests/ProductTests.spec.js:189:71)\n    at Context.eval (https://inventa.shop/__cypress/tests?p=cypress/integration/ProdTests/ProductTests.spec.js:154:10)",
+                "diff": null
+              },
+              "uuid": "6a1e2bd7-0e19-480d-be5c-e02d56fd8a1f",
+              "parentUUID": "eff31d92-3c9e-49fa-8e1c-bcb0f67a85f7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "6a1e2bd7-0e19-480d-be5c-e02d56fd8a1f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6453,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "43a8a1f9-03e0-4e43-a21b-2ef07ecdc33c",
+      "title": "",
+      "fullFile": "cypress/integration/ProdTests/ShopkeeperRegistration.spec.js",
+      "file": "cypress/integration/ProdTests/ShopkeeperRegistration.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "06949cdc-7d93-4a5e-af19-8495fd932f41",
+          "title": "Register",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "4acc05d3-f915-4de9-81b2-04becfdd0523",
+              "title": "when I leave field information blank",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Name and phone without filling",
+                  "fullTitle": "Register when I leave field information blank Name and phone without filling",
+                  "timedOut": null,
+                  "duration": 26269,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "registerPage.clickButtonNext();\nregisterPage.alert.haveText('Adicione o nome da pessoa de contato');\nregisterPage.alert.haveText('Forneça um número de telefone com DDD válido');",
+                  "err": {},
+                  "uuid": "e42686d8-5474-436c-b235-34239caeac53",
+                  "parentUUID": "4acc05d3-f915-4de9-81b2-04becfdd0523",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CPF, CNPJ, Email and password without filling",
+                  "fullTitle": "Register when I leave field information blank CPF, CNPJ, Email and password without filling",
+                  "timedOut": null,
+                  "duration": 18331,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "registerPage.registerFormRetailer(user);\nregisterPage.clickButtonNext();\nregisterPage.clickButtonSubmit();\nregisterPage.alert.haveText('Adicione o seu CPF');\nregisterPage.alert.haveText('CPF é inválido, favor validar os números informados');\nregisterPage.alert.haveText('Adicione o seu CNPJ');\nregisterPage.alert.haveText('CNPJ é inválido, favor validar os números informados');\nregisterPage.alert.haveText('Insira um e-mail');\nregisterPage.alert.haveText('Insira uma senha');\nregisterPage.alert.haveText('Insira uma senha com mais de 6 caracteres');\nregisterPage.alert.haveText('Necessário que aceite os termos e condições');",
+                  "err": {},
+                  "uuid": "47319ed4-a879-4092-8540-c3f37016807d",
+                  "parentUUID": "4acc05d3-f915-4de9-81b2-04becfdd0523",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "e42686d8-5474-436c-b235-34239caeac53",
+                "47319ed4-a879-4092-8540-c3f37016807d"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 44600,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "dd6d97f0-cac6-43d4-b2a5-daab50f85e48",
+              "title": "when the password is less than 6 characters",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "must not register with the password",
+                  "fullTitle": "Register when the password is less than 6 characters must not register with the password",
+                  "timedOut": null,
+                  "duration": 21278,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const user = {\n  name: 'QA Inventa',\n  phone: '+55 11 99999 9999',\n  cpf: '682.004.240-06',\n  cnpj: '92.307.631/0001-76',\n  email: 'inventa@inventa.com'\n};\nregisterPage.registerFormRetailer(user);\nregisterPage.clickButtonNext();\npasswords.forEach(password => {\n  user.password = password;\n  registerPage.registerFormRetailerDetails(user);\n  registerPage.clickTermsAndConditions();\n  registerPage.clickButtonSubmit();\n});",
+                  "err": {},
+                  "uuid": "cbb7711a-3be5-464c-9b70-cd5139b4c9a8",
+                  "parentUUID": "dd6d97f0-cac6-43d4-b2a5-daab50f85e48",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "cbb7711a-3be5-464c-9b70-cd5139b4c9a8"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 21278,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": true,
+        "reportPageTitle": "My Test Suite",
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

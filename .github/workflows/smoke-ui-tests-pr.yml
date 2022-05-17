@@ -1,10 +1,9 @@
-name: smoke-ui-test
-on:
-  schedule:
-    - cron: "*/60 * * * *"
+name: smoke-ui-test-pr
+
+on: [push, pull_request]
 
 jobs:
-  ui-test:
+  smoke-ui-test-pr:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -14,6 +13,8 @@ jobs:
         node-version: '14'
     - run: npm i
     - run: npm run smoke-test
+    - run: npm run merge:reports
+    - run: npm run create:html:report
     - name: Report Status
       if: always()
       uses: ravsamhq/notify-slack-action@v1
@@ -25,3 +26,15 @@ jobs:
         footer: 'Linked to Repo <{repo_url}|{repo}>'
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
+    - uses: actions/upload-artifact@v3
+      with:
+        name: cypress-videos
+        path: cypress/videos
+    - uses: actions/upload-artifact@v3
+      with:
+        name: cypress-reporter
+        path: TestReport/cypress-combined-report.html
+    - uses: actions/upload-artifact@v3
+      with:
+        name: cypress-reporter
+        path: screenshots
