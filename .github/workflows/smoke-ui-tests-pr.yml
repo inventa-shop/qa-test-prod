@@ -30,7 +30,7 @@ jobs:
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
     - name: Save videos from tests failed
-      if: always()
+      if: ${{ failure() }}
       uses: actions/upload-artifact@v3
       with:
         name: cypress-videos
@@ -42,7 +42,7 @@ jobs:
         name: cypress-reporter
         path: TestReport/cypress-combined-report.html
     - name: Save screenshots from tests failed
-      if: always()
+      if: ${{ failure() }}
       uses: actions/upload-artifact@v3
       with:
         name: cypress-reporter
