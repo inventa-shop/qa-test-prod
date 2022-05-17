@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2022-05-17T19:56:05.540Z",
-    "end": "2022-05-17T19:56:12.368Z",
-    "duration": 6828,
+    "start": "2022-05-17T20:10:06.033Z",
+    "end": "2022-05-17T20:10:12.799Z",
+    "duration": 6766,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "e1ccdcfb-4bf4-48bf-84ca-3e92d80a7414",
+      "uuid": "16f91a77-8e61-4fe1-9c08-40644e42c4e8",
       "title": "",
       "fullFile": "cypress/integration/ProdTests/ProductTests.spec.js",
       "file": "cypress/integration/ProdTests/ProductTests.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "eff31d92-3c9e-49fa-8e1c-bcb0f67a85f7",
+          "uuid": "8fe04aae-d42a-4705-affd-ed02017a74f5",
           "title": "Search for test products",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Test products should not be available in production",
               "fullTitle": "Search for test products Test products should not be available in production",
               "timedOut": null,
-              "duration": 6453,
+              "duration": 6454,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "AssertionError: Timed out retrying after 6000ms: Expected to find element: `.search-bar__input-wrapper`, but never found it.\n    at HomePage.eval [as getSearchBarInput] (https://inventa.shop/__cypress/tests?p=cypress/integration/ProdTests/ProductTests.spec.js:189:71)\n    at Context.eval (https://inventa.shop/__cypress/tests?p=cypress/integration/ProdTests/ProductTests.spec.js:154:10)",
                 "diff": null
               },
-              "uuid": "6a1e2bd7-0e19-480d-be5c-e02d56fd8a1f",
-              "parentUUID": "eff31d92-3c9e-49fa-8e1c-bcb0f67a85f7",
+              "uuid": "7ce7125d-e40e-4616-b667-b04e2a0e6138",
+              "parentUUID": "8fe04aae-d42a-4705-affd-ed02017a74f5",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "6a1e2bd7-0e19-480d-be5c-e02d56fd8a1f"
+            "7ce7125d-e40e-4616-b667-b04e2a0e6138"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 6453,
+          "duration": 6454,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
