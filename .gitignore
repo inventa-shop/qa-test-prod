@@ -3,3 +3,8 @@ yarn.lock
 package-lock.json
 /videos
 .DS_Store
+**/videos
+/videos
+/screenshots
+**/TestReport
+TestReport
