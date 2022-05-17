@@ -14,6 +14,8 @@ jobs:
         node-version: '14'
     - run: npm i
     - run: npm run alert
+    - run: npm run merge:reports
+    - run: npm run create:html:report
     - name: Report Status
       if: always()
       uses: ravsamhq/notify-slack-action@v1
