@@ -16,19 +16,23 @@ jobs:
         node-version: '14'
     - run: npm i
     - run: npm run smoke-test
-    - run: npm run merge:reports
-    - run: npm run create:html:report
+    - name: Merge Cypress Reports
+      if: always()
+      run: npm run merge:reports
+    - name: Generate HTML report
+      if: always()
+      run: npm run create:html:report
     - name: Save videos from tests failed
       if: ${{ failure() }}
       uses: actions/upload-artifact@v3
       with:
-        name: cypress-videos
+        name: cypress-videos-failed-tests
         path: cypress/videos
     - name: Save test reports
       if: always()
       uses: actions/upload-artifact@v3
       with:
-        name: cypress-reporter
+        name: cypress-screenshots-failed-tests
         path: TestReport/cypress-combined-report.html
     - name: Save screenshots from tests failed
       if: ${{ failure() }}
