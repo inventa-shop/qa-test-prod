@@ -23,7 +23,6 @@ jobs:
     - name: Generate HTML report
       if: always()
       run: npm run create:html:report
-    - name: Save videos from tests failed
     - name: Save test reports
       if: always()
       uses: actions/upload-artifact@v3
