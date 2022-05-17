@@ -23,20 +23,9 @@ jobs:
       if: always()
       run: npm run create:html:report
     - name: Save videos from tests failed
-      if: ${{ failure() }}
-      uses: actions/upload-artifact@v3
-      with:
-        name: cypress-videos-failed-tests
-        path: cypress/videos
     - name: Save test reports
       if: always()
       uses: actions/upload-artifact@v3
       with:
         name: cypress-reporter
-        path: TestReport/cypress-combined-report.html
-    - name: Save screenshots from tests failed
-      if: ${{ failure() }}
-      uses: actions/upload-artifact@v3
-      with:
-        name: cypress-screenshots-failed-tests
-        path: screenshots
+        path: TestReport

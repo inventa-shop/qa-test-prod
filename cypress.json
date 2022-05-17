@@ -19,5 +19,6 @@
         "embeddedScreenshots": true,
         "inlineAssets": true
     },
-    "screenshotsFolder": "screenshots"
+    "screenshotsFolder": "TestReport/screenshots",
+    "videosFolder": "TestReport/videos"
 }
