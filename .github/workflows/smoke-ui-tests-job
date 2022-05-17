@@ -1,11 +1,11 @@
-name: smoke-ui-test-pr
+name: smoke-ui-test-job
 
 on:
   schedule:
     - cron: "* 1 * * *"
 
 jobs:
-  smoke-ui-test-pr:
+  smoke-ui-test-job:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -17,6 +17,19 @@ jobs:
     - run: npm run smoke-test
     - run: npm run merge:reports
     - run: npm run create:html:report
+    - name: Merge Cypress Reports
+      if: always()
+      run: npm run merge:reports
+    - name: Generate HTML report
+      if: always()
+      run: npm run create:html:report
+    - name: Save videos from tests failed
+    - name: Save test reports
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: cypress-reporter
+        path: TestReport
     - name: Report Status
       if: always()
       uses: ravsamhq/notify-slack-action@v1
@@ -28,7 +41,3 @@ jobs:
         footer: 'Linked to Repo <{repo_url}|{repo}>'
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
-    - uses: actions/upload-artifact@v3
-      with:
-        name: cypress-reporter
-        path: TestReport/cypress-combined-report.html

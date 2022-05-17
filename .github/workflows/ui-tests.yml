@@ -14,8 +14,19 @@ jobs:
         node-version: '14'
     - run: npm i
     - run: npm run alert
-    - run: npm run merge:reports
-    - run: npm run create:html:report
+    - name: Merge Cypress Reports
+      if: always()
+      run: npm run merge:reports
+    - name: Generate HTML report
+      if: always()
+      run: npm run create:html:report
+    - name: Save videos from tests failed
+    - name: Save test reports
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: cypress-reporter
+        path: TestReport
     - name: Report Status
       if: always()
       uses: ravsamhq/notify-slack-action@v1
