@@ -29,15 +29,21 @@ jobs:
         footer: 'Linked to Repo <{repo_url}|{repo}>'
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
-    - uses: actions/upload-artifact@v3
+    - name: Save videos from tests failed
+      if: always()
+      uses: actions/upload-artifact@v3
       with:
         name: cypress-videos
         path: cypress/videos
-    - uses: actions/upload-artifact@v3
+    - name: Save test reports
+      if: always()
+      uses: actions/upload-artifact@v3
       with:
         name: cypress-reporter
         path: TestReport/cypress-combined-report.html
-    - uses: actions/upload-artifact@v3
+    - name: Save screenshots from tests failed
+      if: always()
+      uses: actions/upload-artifact@v3
       with:
         name: cypress-reporter
         path: screenshots
