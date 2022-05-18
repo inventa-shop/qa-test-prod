@@ -1,0 +1,19 @@
+{
+  "retailer_data_complete": {
+    "name": "QA Inventa",
+    "email": "inventa@inventa.com",
+    "phone": "+55 11 99999 9999",
+    "cpf": "682.004.240-06",
+    "cnpj": "92.307.631/0001-76",
+    "password": "inventa123"
+  },
+
+  "short_password": {
+    "name": "QA Inventa",
+    "email": "inventa@inventa.com",
+    "phone": "+55 11 99999 9999",
+    "cpf": "682.004.240-06",
+    "cnpj": "92.307.631/0001-76",
+    "password": null
+  }
+}
