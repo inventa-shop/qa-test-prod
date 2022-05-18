@@ -9,7 +9,7 @@ describe('Search for test products', () => {
 
     it('Test products should not be available in production', () => {
       page = new HomePage();
-      //page.visit();
+      page.visit();
       page.getSearchBarInput().type('Shampoo transparente{enter}');
 
       
