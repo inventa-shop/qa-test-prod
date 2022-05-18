@@ -47,7 +47,7 @@ jobs:
       uses: marocchino/sticky-pull-request-comment@v2
       with:
         header: 🚨 PR - Tests E2E Failed in smoke-ui-tests-pr workflow 🚨
-        number: ${{ github.event.pull_request.number }}
+        number: ${{ github.event.workflow_run.pull_requests[0].number }}
         message: |
           'The E2E tests failed in *{workflow}* workflow, you can check the report in the artifacts section in the bottom of the following page [clicking here](https://github.com/inventa-shop/qa-test-prod/actions/runs/${{ github.run_id }})
     - name: GH Find Current
@@ -58,6 +58,7 @@ jobs:
       if: ${{ failure() }}
       uses: marocchino/sticky-pull-request-comment@v2
       with:
+        header: 🚨 PR - Tests E2E Failed in smoke-ui-tests-pr workflow 🚨
         number: ${{ steps.finder.outputs.pr }}
         message: |
-          'The E2E tests failed in *{workflow}* workflow, you can check the report in the artifacts section in the bottom of the following page [clicking here](https://github.com/inventa-shop/qa-test-prod/actions/runs/${{ github.run_id }})
+          🚨 The E2E tests failed in ${{ github.event.workflow_run.name }} workflow, you can check the report in the artifacts section in the bottom of the following page [clicking here](https://github.com/inventa-shop/qa-test-prod/actions/runs/${{ github.run_id }})
