@@ -2,7 +2,8 @@ name: add artifact links to pull request and related issues
 on:
   workflow_run:
     workflows: [smoke-ui-tests-pr]
-    types: [completed]
+    types:
+      - completed
 
 jobs:
   artifacts-url-comments:

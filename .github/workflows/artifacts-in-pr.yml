@@ -2,8 +2,8 @@ name: artifacts-in-pr
 
 on:
   workflow_run:
-    workflows: ["smoke-ui-tests-pr"]
-    types: 
+    workflows: [smoke-ui-tests-pr]
+    types:
       - completed
 
 jobs:
