@@ -61,4 +61,4 @@ jobs:
         header: 🚨 PR - Tests E2E Failed in smoke-ui-tests-pr workflow 🚨
         number: ${{ steps.finder.outputs.pr }}
         message: |
-          🚨 The E2E tests failed in ${{ github.event.workflow_run.name }} workflow, you can check the report in the artifacts section in the bottom of the following page [clicking here](https://github.com/inventa-shop/qa-test-prod/actions/runs/${{ github.run_id }})
+          🚨 The E2E tests failed in ${{ github.workflow }} workflow, you can check the report in the artifacts section in the bottom of the following page [clicking here](https://github.com/inventa-shop/qa-test-prod/actions/runs/${{ github.run_id }})
