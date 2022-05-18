@@ -17,8 +17,8 @@ Cypress.on('test:after:run', (test, runnable) => {
         const screenshot = `screenshots/${
             Cypress.spec.name
         }/${runnable.parent.title} -- ${test.title} (failed).png`;
-        const video =  `videos/${Cypress.spec.name}.mp4`
+        const video = `videos/${Cypress.spec.name}.mp4`
         addContext({test}, screenshot);
-        addContext({ test }, video);
+        addContext({test}, video);
     }
 })

@@ -25,7 +25,7 @@ describe('Testing search feature', () => {
     cy.contains('a','Perfume transparente').should('have.length', 0);
   })
 
-  it("Will search for Batom líquido transparente and expect to don't get a product ", () => {
+  it("Will search for Batom líquido transparente and expect to don't get a product", () => {
     cy.get('.search-bar__input-wrapper').type('Batom líquido transparente{enter}');
     cy.get('.modal-closer').first().click();
     cy.contains('Ver preço')

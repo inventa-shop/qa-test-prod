@@ -33,7 +33,7 @@ jobs:
         status: ${{ job.status }}
         notify_when: 'failure'
         notification_title: '{workflow} has {status_message}'
-        message_format: '{emoji} *{workflow}* *Github id: {{ github.run_id }}* {status_message} in <{repo_url}|{repo}>'
+        message_format: '{emoji} The E2E tests failed in *{workflow}* workflow in the <{repo_url}|{repo}> repository, you can check the report in the artifacts section in the bottom of the following link https://github.com/inventa-shop/qa-test-prod/actions/runs/${{ github.run_id }}'
         footer: 'Linked to Repo <{repo_url}|{repo}>'
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
