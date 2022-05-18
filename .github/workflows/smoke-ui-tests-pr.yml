@@ -40,6 +40,7 @@ jobs:
     #  env:
     #    SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
     - name: Checkout
+      if: ${{ failure() }}
       uses: actions/checkout@v3
     - name: 🚨 Tests E2E Failed in smoke-ui-tests-pr workflow 🚨
       if: ${{ failure() }}
