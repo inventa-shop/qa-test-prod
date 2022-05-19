@@ -9,5 +9,20 @@
     "updateTimeout": 6000,
     "waitForPageToLoadSafeTimeout": 6000,
     "scrollBehavior":"center",
+<<<<<<< HEAD
     "experimentalSessionAndOrigin": true
+=======
+    "reporter": "../node_modules/mochawesome/src/mochawesome.js",
+    "reporterOptions": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": true,
+        "reportPageTitle": "My Test Suite",
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+    },
+    "screenshotsFolder": "TestReport/screenshots",
+    "videosFolder": "TestReport/videos"
+>>>>>>> 2b04bdaf467af7414fa7d9399592f9abc8e419e0
 }

@@ -6,7 +6,11 @@
   "scripts": {
     "test": "npx cypress open",
     "alert": "cypress run --config pageLoadTimeout=60000,retries=1,defaultCommandTimeout=4000,viewportWidth=1440,viewportHeight=900 --spec 'cypress/integration/ProdTests/ProdProductsTest.spec.js'",
-    "smoke-test": "cypress run --config pageLoadTimeout=60000,retries=1,defaultCommandTimeout=4000,viewportWidth=1440,viewportHeight=900 --spec 'cypress/integration/ProdTests/ProductTests.spec.js' && cypress run --spec 'cypress/integration/ProdTests/ShopkeeperRegistration.spec.js'"
+    "smoke-test": "cypress run --config pageLoadTimeout=60000,retries=1,defaultCommandTimeout=4000,viewportWidth=1440,viewportHeight=900 --spec 'cypress/integration/ProdTests/ProductTests.spec.js' && cypress run --spec 'cypress/integration/ProdTests/ShopkeeperRegistration.spec.js'",
+    "delete:reportFolder": "rm -rf mochawesome-report/",
+    "test:cli": "npm run delete:reportFolder && cypress run",
+    "merge:reports": "mochawesome-merge mochawesome-report/*.json > cypress-combined-report.json",
+    "create:html:report": "npm run merge:reports && marge --reportDir TestReport cypress-combined-report.json"
   },
   "keywords": [
     "qa",
@@ -16,6 +20,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^9.6.1"
+    "cypress": "^9.6.1",
+    "del": "^6.1.0",
+    "lodash": "^4.17.21",
+    "mocha": "^8.2.0",
+    "mochawesome": "^6.1.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.1.0"
   }
 }

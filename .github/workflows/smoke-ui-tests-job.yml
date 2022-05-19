@@ -1,10 +1,11 @@
-name: ui-test
+name: smoke-ui-test-job
+
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "* 1 * * *"
 
 jobs:
-  ui-test:
+  smoke-ui-test-job:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -13,7 +14,9 @@ jobs:
       with:
         node-version: '14'
     - run: npm i
-    - run: npm run alert
+    - run: npm run smoke-test
+    - run: npm run merge:reports
+    - run: npm run create:html:report
     - name: Merge Cypress Reports
       if: always()
       run: npm run merge:reports

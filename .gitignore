@@ -3,3 +3,12 @@ yarn.lock
 package-lock.json
 /videos
 .DS_Store
+**/videos
+/videos
+**/screenshots
+cypress/screenshots
+/TestReport
+TestReport
+cypress-combined-report.json
+cypress-combined-report.*
+/mochawesome-report
