@@ -8,5 +8,6 @@
     "updateState": 6000,
     "updateTimeout": 6000,
     "waitForPageToLoadSafeTimeout": 6000,
-    "scrollBehavior":"center"
+    "scrollBehavior":"center",
+    "experimentalSessionAndOrigin": true
 }
