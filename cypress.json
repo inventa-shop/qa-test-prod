@@ -9,6 +9,7 @@
     "updateTimeout": 6000,
     "waitForPageToLoadSafeTimeout": 6000,
     "scrollBehavior":"center",
+    "experimentalSessionAndOrigin": true,
     "reporter": "../node_modules/mochawesome/src/mochawesome.js",
     "reporterOptions": {
         "overwrite": false,
