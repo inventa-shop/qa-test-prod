@@ -2,12 +2,6 @@
 
 describe('Testing search feature', () => {
 
-  Cypress.on(
-    'uncaught:exception',
-    (_,__) =>
-      false,
-  );
-
   before(() => {
     cy.visit('/collections/promocoes-1');
   });

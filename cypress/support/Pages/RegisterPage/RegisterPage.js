@@ -25,10 +25,10 @@ class RegisterPage {
     }
 
     registerFormRetailerDetails(user) {
-        cy.get(el.CPF_BY_ID).type(user.cpf)
-        cy.get(el.CNPJ_BY_ID).type(user.cnpj)
-        cy.get(el.EMAIL_BY_ID).type(user.email)
-        cy.get(el.PASSWORD_BY_ID).type(user.password)
+        cy.get(el.CPF_BY_ID).clear().type(user.cpf)
+        cy.get(el.CNPJ_BY_ID).clear().type(user.cnpj)
+        cy.get(el.EMAIL_BY_ID).clear().type(user.email)
+        cy.get(el.PASSWORD_BY_ID).clear().type(user.password)
     }
 
     clickButtonNext() {
