@@ -1,11 +1,11 @@
-name: smoke-ui-test-job
+name: smoke-ui-test-fp
 
 on:
   schedule:
     - cron: "* 4 * * *"
 
 jobs:
-  smoke-ui-test-job:
+  smoke-ui-test-fp:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -14,21 +14,7 @@ jobs:
       with:
         node-version: '14'
     - run: npm i
-    - run: npm run smoke-test
-    - run: npm run merge:reports
-    - run: npm run create:html:report
-    - name: Merge Cypress Reports
-      if: always()
-      run: npm run merge:reports
-    - name: Generate HTML report
-      if: always()
-      run: npm run create:html:report
-    - name: Save test reports
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: cypress-reporter
-        path: TestReport
+    - run: npm run smoke-test-fp
     - name: Report Status
       if: always()
       uses: ravsamhq/notify-slack-action@v1
