@@ -17,7 +17,7 @@ describe('Supliter login test', () => {
 
       // TODDO: refactor to page object pattern
       cy.contains('h2', 'Garanta 0% de comissão indicando lojistas').should(
-        'be.visible',
+        'be.visible'
       );
     });
   });
