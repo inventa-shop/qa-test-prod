@@ -7,18 +7,6 @@ class RegisterPage {
         this.alert = alert
     }
 
-    goHomePage() {
-        cy.visit('/')
-    }
-
-    clickAcceptCookie() {
-        cy.get(el.ACCEPT_COOKIE_BUTTON_BY_CLASS).click()
-    }
-
-    clickToRegisterFormRetailer() {
-        cy.contains(el.GO_FORM_BUTTON_BY_ATTRIBUTE).click()
-    }
-
     registerFormRetailer(user) {
         cy.get(el.NAME_BY_ID).type(user.name)
         cy.get(el.PHONE_BY_ID).type(user.phone)

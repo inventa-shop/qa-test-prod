@@ -1,8 +1,7 @@
 import RegisterPage from '../../support/Pages/RegisterPage/RegisterPage'
+import HomePage from '../../support/Pages/HomePage/HomePage'
 
 describe('Register', () => {
-
-    const registerPage = new RegisterPage()
 
     before(() => {
         cy.fixture('registerRetailerData').then(function (registerRetailerData) {
@@ -12,12 +11,16 @@ describe('Register', () => {
     })
 
     beforeEach(() => {
-        registerPage.goHomePage()
-        registerPage.clickAcceptCookie()
-        registerPage.clickToRegisterFormRetailer()
+        const homePage = new HomePage();
+        homePage.visit();
+        homePage.getAcceptCookie().click();
+        homePage.getLastModalCloser().click();
+        homePage.getRegisterFormRetailer().click();
     })
 
     context('When I leave field information blank', () => {
+        const registerPage = new RegisterPage();
+
         it('Name and phone without filling I need to see a feedback error', () => {
             registerPage.clickButtonNext()
             registerPage.alert.containsVisibleText('Adicione o nome da pessoa de contato')
@@ -41,9 +44,10 @@ describe('Register', () => {
     })
 
     context('when the password is less than 6 characters I need to see a feedback error', () => {
+        const registerPage = new RegisterPage();
         const passwords = ['1', '12345']
 
-        it.only(`Must not register with passwords: ${passwords}`, function () {
+        it(`Must not register with passwords: ${passwords}`, function () {
             registerPage.registerFormRetailer(this.retailerDataComplete)
             registerPage.clickButtonNext()
             registerPage.clickTermsAndConditions();
