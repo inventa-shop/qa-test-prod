@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
-import { HomePage } from "../../support/Pages/HomePage/HomePage";
-import { SearchPage } from "../../support/Pages/SearchPage/SearchPage";
+import HomePage from "../../support/Pages/HomePage/HomePage";
+import SearchPage from "../../support/Pages/SearchPage/SearchPage";
 
 describe('Search for test products', () => {
 
