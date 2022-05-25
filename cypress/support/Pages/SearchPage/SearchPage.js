@@ -1,4 +1,4 @@
-export class SearchPage {
+export default class SearchPage {
 
     getSeePriceLabel = () => cy.contains('Ver preço');
 

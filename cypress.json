@@ -2,11 +2,11 @@
     "baseUrl": "https://inventa.shop",
     "viewportWidth": 1440,
     "viewportHeight": 900,
-    "defaultCommandTimeout": 6000,
-    "slowCommandTimeout": 6000,
+    "defaultCommandTimeout": 8000,
+    "slowCommandTimeout": 8000,
     "chromeWebSecurity": false,
-    "updateState": 6000,
-    "updateTimeout": 6000,
+    "updateState": 8000,
+    "updateTimeout": 8000,
     "waitForPageToLoadSafeTimeout": 6000,
     "scrollBehavior":"center",
     "reporter": "../node_modules/mochawesome/src/mochawesome.js",
@@ -20,5 +20,6 @@
         "inlineAssets": true
     },
     "screenshotsFolder": "TestReport/screenshots",
-    "videosFolder": "TestReport/videos"
+    "videosFolder": "TestReport/videos",
+    "modifyObstructiveCode": false
 }

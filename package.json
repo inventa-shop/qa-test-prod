@@ -6,11 +6,12 @@
   "scripts": {
     "test": "npx cypress open",
     "alert": "cypress run --config pageLoadTimeout=60000,retries=1,defaultCommandTimeout=4000,viewportWidth=1440,viewportHeight=900 --spec 'cypress/integration/ProdTests/ProdProductsTest.spec.js'",
-    "smoke-test": "cypress run --config pageLoadTimeout=60000,retries=1,defaultCommandTimeout=4000,viewportWidth=1440,viewportHeight=900 --spec 'cypress/integration/ProdTests/ProductTests.spec.js' && cypress run --spec 'cypress/integration/ProdTests/ShopkeeperRegistration.spec.js'",
+    "smoke-test": "cypress run --config pageLoadTimeout=60000,retries=1,defaultCommandTimeout=4000,viewportWidth=1440,viewportHeight=900 --spec 'cypress/integration/ProdTests/ProductTests.spec.js' && cypress run --spec 'cypress/integration/ProdTests/RetailerRegistration.spec.js'",
     "delete:reportFolder": "rm -rf mochawesome-report/",
     "test:cli": "npm run delete:reportFolder && cypress run",
     "merge:reports": "mochawesome-merge mochawesome-report/*.json > cypress-combined-report.json",
-    "create:html:report": "npm run merge:reports && marge --reportDir TestReport cypress-combined-report.json"
+    "create:html:report": "npm run merge:reports && marge --reportDir TestReport cypress-combined-report.json",
+    "smoke-test-fp": "cypress run --config pageLoadTimeout=60000,retries=1,defaultCommandTimeout=4000,viewportWidth=1440,viewportHeight=900 --spec 'cypress/integration/ProdTests/SuplierPortal.test.spec.js'"
   },
   "keywords": [
     "qa",
@@ -20,7 +21,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^9.6.1",
+    "cypress": "^9.7.0",
     "del": "^6.1.0",
     "lodash": "^4.17.21",
     "mocha": "^8.2.0",

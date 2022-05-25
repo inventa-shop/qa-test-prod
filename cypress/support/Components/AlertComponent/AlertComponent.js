@@ -1,8 +1,8 @@
 import { el } from './AlertComponentSelectors'
 
 class Alert {
-    haveText(expectedText) {
-        cy.contains(el.FORM_REGISTER_MODAL_BY_ATTRIBUTE, expectedText)
+    containsVisibleText(expectedText) {
+        cy.containsVisibleText(el.FORM_REGISTER_MODAL_BY_ATTRIBUTE, expectedText)
             .should('be.visible')
     }
 }

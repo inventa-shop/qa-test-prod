@@ -8,6 +8,5 @@ exports.el = {
     PASSWORD_BY_ID: '#211026',
     REGISTER_BUTTON_BY_ATTRIBUTE: ('button[class="cf-submit-form cf-button btn button"]'),
     NEXT_BUTTON_BY_ATTRIBUTE: ('span', 'Próximo'),
-    GO_FORM_BUTTON_BY_ATTRIBUTE: ('a', 'Crie a sua conta para comprar'),
     TERMS_AND_CONDITIONS_BY_ID: '#673662',
 }

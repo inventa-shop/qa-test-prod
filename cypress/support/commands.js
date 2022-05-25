@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+/**
+ * Verify if a text in a specific element is visible
+ * @example
+ *  cy.containsVisibleText('#id-element', 'text I want to verify if is visible')
+ */
+Cypress.Commands.add('containsVisibleText', (element, expectedText) => { 
+    cy.contains(element, expectedText)
+            .should('be.visible')
+ })
