@@ -2,7 +2,7 @@ name: smoke-ui-test-job
 
 on:
   schedule:
-    - cron: "* 4 * * *"
+    - cron: "*/5 0-7 * * *"
 
 jobs:
   smoke-ui-test-job:
