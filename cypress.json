@@ -7,7 +7,7 @@
     "chromeWebSecurity": false,
     "updateState": 8000,
     "updateTimeout": 8000,
-    "waitForPageToLoadSafeTimeout": 6000,
+    "waitForPageToLoadSafeTimeout": 2000,
     "scrollBehavior":"center",
     "reporter": "../node_modules/mochawesome/src/mochawesome.js",
     "reporterOptions": {

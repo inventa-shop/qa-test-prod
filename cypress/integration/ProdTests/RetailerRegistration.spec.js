@@ -14,7 +14,6 @@ describe('Register', () => {
         const homePage = new HomePage();
         homePage.visit();
         homePage.getAcceptCookie().click();
-        homePage.getLastModalCloser().click();
         homePage.getRegisterFormRetailer().click();
     })
 
