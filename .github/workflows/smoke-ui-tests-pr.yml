@@ -15,7 +15,7 @@ jobs:
       with:
         node-version: '14'
     - run: npm i
-    name: Run Smoke Tests
+    - name: Run Smoke Tests
       env:
         CYPRESS_SUPPLIER_PORTAL_URL_DEV: ${{ secrets.CYPRESS_SUPPLIER_PORTAL_URL_DEV }}
         CYPRESS_USER_EMAIL: ${{ secrets.CYPRESS_USER_EMAIL }}

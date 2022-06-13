@@ -13,7 +13,7 @@ jobs:
       with:
         node-version: '14'
     - run: npm i
-    name: Run check to see if any product test is available in production
+    - name: Run check to see if any product test is available in production
       env:
         CYPRESS_RETAILTER_USER_EMAIL: ${{ secrets.CYPRESS_RETAILTER_USER_EMAIL }}
         CYPRESS_RETAILTER_USER_PASSWORD: ${{ secrets.CYPRESS_RETAILTER_USER_PASSWORD }}
