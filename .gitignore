@@ -13,3 +13,4 @@ cypress-combined-report.json
 cypress-combined-report.*
 /mochawesome-report
 .env
+cypress.env.json

@@ -16,7 +16,7 @@ describe('Supliter login test', () => {
       loginPage.getLoginSubmitButton().click();
 
       // TODDO: refactor to page object pattern
-      cy.contains('h2', 'Garanta 0% de comissão indicando lojistas').should(
+      cy.contains('h2', 'Garanta 0%* de comissão indicando lojistas').should(
         'be.visible'
       );
     });
