@@ -10,7 +10,7 @@ describe('Supliter login test', () => {
     });
   
     it('Login with success when using valid credentials', () => {
-      loginPage.getEmailInput().type(Cypress.env('USER_EMAIL'));
+      loginPage.getEmailInput().type(Cypress.env('USER_EMAIL'), {log: false});
       loginPage.getPasswordInput().type(Cypress.env('USER_PASSWORD'), {log: false});
       loginPage.getTermsCheckboxInput().click();
       loginPage.getLoginSubmitButton().click();

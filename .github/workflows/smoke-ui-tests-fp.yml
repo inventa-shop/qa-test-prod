@@ -32,3 +32,15 @@ jobs:
     #    footer: 'Linked to Repo <{repo_url}|{repo}>'
     #  env:
     #    SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
+    - name: Merge Cypress Reports
+      if: always()
+      run: npm run merge:reports
+    - name: Generate HTML report
+      if: always()
+      run: npm run create:html:report
+    - name: Save test reports
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: cypress-reporter
+        path: TestReport
