@@ -7,7 +7,7 @@ import {
 
 export default class LoginPage {
 
-    visit = () => cy.visit(`${Cypress.env('SUPPLIER_PORTAL_URL_DEV')}/login`);
+    visit = () => cy.visit(`${Cypress.env('SUPPLIER_PORTAL_URL')}/login`);
 
     getEmailInput = () => cy.get(EMAIL_INPUT_BY_ATTRIBUTE);
 

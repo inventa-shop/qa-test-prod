@@ -2,7 +2,7 @@ name: smoke-ui-test-job
 
 on:
   schedule:
-    - cron: "*/5 0-7 * * *"
+    - cron: "*/10 8-23 * * *"
 
 jobs:
   smoke-ui-test-job:
@@ -14,7 +14,15 @@ jobs:
       with:
         node-version: '14'
     - run: npm i
-    - run: npm run smoke-test
+    name: Run Smoke Tests
+      env:
+        CYPRESS_SUPPLIER_PORTAL_URL_DEV: ${{ secrets.CYPRESS_SUPPLIER_PORTAL_URL_DEV }}
+        CYPRESS_USER_EMAIL: ${{ secrets.CYPRESS_USER_EMAIL }}
+        CYPRESS_USER_PASSWORD: ${{ secrets.CYPRESS_USER_PASSWORD }}
+        CYPRESS_SUPPLIER_PORTAL_URL: ${{ secrets.CYPRESS_SUPPLIER_PORTAL_URL }}
+        CYPRESS_RETAILTER_USER_EMAIL: ${{ secrets.CYPRESS_RETAILTER_USER_EMAIL }}
+        CYPRESS_RETAILTER_USER_PASSWORD: ${{ secrets.CYPRESS_RETAILTER_USER_PASSWORD }}
+      run: npm run smoke-test
     - run: npm run merge:reports
     - run: npm run create:html:report
     - name: Merge Cypress Reports

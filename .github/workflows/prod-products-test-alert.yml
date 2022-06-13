@@ -1,10 +1,10 @@
-name: ui-test
+name: prod-products-test-alert
 on:
   schedule:
-    - cron: "*/10 0-7 * * *"
+    - cron: "*/10 8-23 * * *"
 
 jobs:
-  ui-test:
+  prod-products-test-alert:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -13,7 +13,11 @@ jobs:
       with:
         node-version: '14'
     - run: npm i
-    - run: npm run alert
+    name: Run check to see if any product test is available in production
+      env:
+        CYPRESS_RETAILTER_USER_EMAIL: ${{ secrets.CYPRESS_RETAILTER_USER_EMAIL }}
+        CYPRESS_RETAILTER_USER_PASSWORD: ${{ secrets.CYPRESS_RETAILTER_USER_PASSWORD }}
+      run: npm run alert
     - name: Merge Cypress Reports
       if: always()
       run: npm run merge:reports

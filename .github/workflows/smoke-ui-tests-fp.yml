@@ -2,7 +2,7 @@ name: smoke-ui-test-fp
 
 on:
   schedule:
-    - cron: "*/10 0-7 * * *"
+    - cron: "*/10 8-23 * * *"
 
 jobs:
   smoke-ui-test-fp:
@@ -14,15 +14,21 @@ jobs:
       with:
         node-version: '14'
     - run: npm i
-    - run: npm run smoke-test-fp
-    - name: Notify Slack
-      if: always()
-      uses: ravsamhq/notify-slack-action@v1
-      with:
-        status: ${{ job.status }}
-        notify_when: 'failure'
-        notification_title: '{workflow} has {status_message}'
-        message_format: '{emoji} The E2E tests failed in *{workflow}* workflow in the <{repo_url}|{repo}> repository, you can check the report in the artifacts section in the bottom of the following link https://github.com/inventa-shop/qa-test-prod/actions/runs/${{ github.run_id }}'
-        footer: 'Linked to Repo <{repo_url}|{repo}>'
+    - name: Run E2E tests in FP
       env:
-        SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
+        CYPRESS_SUPPLIER_PORTAL_URL_DEV: ${{ secrets.CYPRESS_SUPPLIER_PORTAL_URL_DEV }}
+        CYPRESS_USER_EMAIL: ${{ secrets.CYPRESS_USER_EMAIL }}
+        CYPRESS_USER_PASSWORD: ${{ secrets.CYPRESS_USER_PASSWORD }}
+        CYPRESS_SUPPLIER_PORTAL_URL: ${{ secrets.CYPRESS_SUPPLIER_PORTAL_URL }}
+      run: npm run smoke-test-fp
+    #- name: Notify Slack
+    #  if: always()
+    #  uses: ravsamhq/notify-slack-action@v1
+    #  with:
+    #    status: ${{ job.status }}
+    #    notify_when: 'failure'
+    #    notification_title: '{workflow} has {status_message}'
+    #    message_format: '{emoji} The E2E tests failed in *{workflow}* workflow in the <{repo_url}|{repo}> repository, you can check the report in the artifacts section in the bottom of the following link https://github.com/inventa-shop/qa-test-prod/actions/runs/${{ github.run_id }}'
+    #    footer: 'Linked to Repo <{repo_url}|{repo}>'
+    #  env:
+    #    SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
