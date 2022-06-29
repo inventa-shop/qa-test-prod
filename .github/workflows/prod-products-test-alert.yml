@@ -17,7 +17,7 @@ jobs:
       env:
         CYPRESS_RETAILTER_USER_EMAIL: ${{ secrets.CYPRESS_RETAILTER_USER_EMAIL }}
         CYPRESS_RETAILTER_USER_PASSWORD: ${{ secrets.CYPRESS_RETAILTER_USER_PASSWORD }}
-      run: npm run alert
+      #run: npm run alert
     - name: Merge Cypress Reports
       if: always()
       run: npm run merge:reports
