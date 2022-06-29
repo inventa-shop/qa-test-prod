@@ -1,5 +1,4 @@
 describe('Testing Home Page', () => {
-
     before(() => {
         cy.visit('/')
     })
